@@ -57,7 +57,12 @@ function Title(props){
             }
         })
     }
-    function loginEnter(e){
+    function loginIdEnter(e){
+        if(e.key==='Enter'){
+            document.getElementById('pwInput').focus()
+        }
+    }
+    function loginPwEnter(e){
         if(e.key==='Enter'){
             login()
         }
@@ -74,8 +79,8 @@ function Title(props){
             <p onClick={()=>{movePage("/todos")}}>타이틀바</p>
             {store.mbNo === 0?
                 <div>
-                    <input id="idInput" type="text" placeholder="아이디 또는 이메일" />
-                    <input id="pwInput" type="password" placeholder="비밀번호" onKeyDown={(e)=>{loginEnter(e)}}/>
+                    <input id="idInput" type="text" placeholder="아이디 또는 이메일" onKeyDown={(e)=>{loginIdEnter(e)}}/>
+                    <input id="pwInput" type="password" placeholder="비밀번호" onKeyDown={(e)=>{loginPwEnter(e)}}/>
                     <span onClick={login}>로그인</span>
                     <span>/</span>
                     <span onClick={()=>{movePage("/join")}}>회원가입</span>
