@@ -72,76 +72,52 @@ function Join(props){
 
     // 회원가입 버튼 활성화 검사
     function validateDisable(){
-        if(idOk){
-            if(emailOk){
-                if(pwOk){
-                    setDisable(false)
-                }else{
-                    setDisable(true)
-                }
-            }else{
-                setDisable(true)
-            }
-        }else{
+        if(joinId === ""){
             setDisable(true)
+            return
         }
+        if(joinEmail === ""){
+            setDisable(true)
+            return
+        }
+        if(joinPw === ""){
+            setDisable(true)
+            return
+        }
+        if(joinCf === ""){
+            setDisable(true)
+            return
+        }
+        if(joinPw !== joinCf){
+            setDisable(true)
+            return
+        }
+        setDisable(false)
     }
 
     let [joinId,setJoinId] = useState("")
     let [joinEmail,setJoinEmail] = useState("")
     let [joinPw,setJoinPw] = useState("")
     let [joinCf,setJoinCf] = useState("")
-    let [idOk,setIdOk] = useState(false)
-    let [emailOk,setEmailOk] = useState(false)
-    let [pwOk,setPwOk] = useState(false)
     let [disable,setDisable] = useState(true)
 
     // 입력창 내용 검사
     useEffect(()=>{
         setJoinId(joinId)
-        if(joinId === ""){
-            setIdOk(false)
-        }else{
-            setIdOk(true)
-        }
+        validateDisable()
     },[joinId])
     useEffect(()=>{
         setJoinEmail(joinEmail)
-        if(joinEmail === ""){
-            setEmailOk(false)
-        }else{
-            setEmailOk(true)
-        }
+        validateDisable()
     },[joinEmail])
     useEffect(()=>{
         setJoinPw(joinPw)
-        if(joinPw === ""){
-            setPwOk(false)
-        }else if(joinPw !== joinCf){
-            setPwOk(false)
-        }else{
-            setPwOk(true)
-        }
+        validateDisable()
     },[joinPw])
     useEffect(()=>{
         setJoinCf(joinCf)
-        if(joinCf === ""){
-            setPwOk(false)
-        }else if(joinPw !== joinCf){
-            setPwOk(false)
-        }else{
-            setPwOk(true)
-        }
+        validateDisable()
     },[joinCf])
-    useEffect(()=>{
-        validateDisable()
-    },[idOk])
-    useEffect(()=>{
-        validateDisable()
-    },[emailOk])
-    useEffect(()=>{
-        validateDisable()
-    },[pwOk])
 
     // 엔터 누르면 다음줄
     function joinIdEnter(e){
