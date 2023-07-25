@@ -2,7 +2,6 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import TdList from './components/TdList';
 import Main from './components/Main';
-import Login from './components/Login';
 import Join from './components/Join';
 import Leave from './components/Leave';
 import ChangePassword from './components/ChangePassword';
@@ -19,7 +18,7 @@ function App() {
       <Title setMbNo={setMbNo}/>
       <Routes>
         {mbNo===0?<Route path={'/'} element={<Main/>} />: <Route path={'/'} element={<TdList/>} />}
-        <Route path={'/join'} element={<Join />} />
+        <Route path={'/join'} element={<Join setMbNo={setMbNo}/>} />
         <Route path={'/changePassword'} element={<ChangePassword />} />
         <Route path={'/leave'} element={<Leave />} />
       </Routes>
