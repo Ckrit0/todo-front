@@ -8,19 +8,18 @@ import Leave from './components/Leave';
 import ChangePassword from './components/ChangePassword';
 import Title from './components/Title';
 import store from './components/Store';
+import { useState } from 'react';
 
 
 // 비로그인시 메인화면으로 갈 페이지들 정리(todos)
 function App() {
-  let mb = store.mb
+  let [mbNo,setMbNo] = useState(store.mbNo) // 아무나 쉽게 접근할 수 없는 방식(mbNo+id 등)으로 변경해야함.
   return (
     <div className="App">
-      <Title />
+      <Title setMbNo={setMbNo}/>
       <Routes>
-        <Route path={'/'} element={<Main/>} />
-        <Route path={'/login'} element={<Login />} />
+        {mbNo===0?<Route path={'/'} element={<Main/>} />: <Route path={'/'} element={<TdList/>} />}
         <Route path={'/join'} element={<Join />} />
-        <Route path={'/todos'} element={<TdList/>} />
         <Route path={'/changePassword'} element={<ChangePassword />} />
         <Route path={'/leave'} element={<Leave />} />
       </Routes>

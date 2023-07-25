@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 function Main(){
 
@@ -5,7 +6,7 @@ function Main(){
         <div>
             <p>메인페이지</p>
             <p>대충 환영인사 만들예정</p>
-            <p>일정 시간 지난 뒤 로그인 페이지로 이동</p>
+            <p>로그인하면 일정이 나옴미다</p>
         </div>
     )
 }
