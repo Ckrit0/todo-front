@@ -4,6 +4,28 @@ import { useNavigate } from "react-router-dom";
 
 function Title(props){
     let movePage = useNavigate();
+    function getUser(){
+        if(store.mbNo === 0){
+            return
+        }
+        let host = "http://localhost:8080/getmbbymbno"
+        let body = {
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json",
+        },
+        body: JSON.stringify({
+            mbNo:store.mbNo,
+        }),
+        }
+        fetch(host,body)
+        .then((response) => response.json())
+        .then((response)=>{
+            store.mbId = response.mbId
+            store.mbEmail = response.mbEmail
+        })
+        
+    }
     function login(){
         let idInput = document.getElementById('idInput')
         let pwInput = document.getElementById('pwInput')
@@ -27,6 +49,8 @@ function Title(props){
                 pwInput.value=""
             }else{
                 store.mbNo = response.mbNo
+                store.mbId = response.mbId
+                store.mbEmail = response.mbEmail
                 idInput.value = ""
                 pwInput.value = ""
                 props.setMbNo(store.mbNo)
@@ -40,8 +64,11 @@ function Title(props){
     }
     function logout(){
         store.mbNo = 0
+        store.mbId = ""
+        store.mbEmail = ""
         props.setMbNo(0)
     }
+    getUser()
     return(
         <div>
             <p onClick={()=>{movePage("/todos")}}>타이틀바</p>
@@ -54,7 +81,7 @@ function Title(props){
                     <span onClick={()=>{movePage("/join")}}>회원가입</span>
                 </div>
                 :
-                <div>(유저넘버:{store.mbNo})님 환영합니다.
+                <div>{store.mbId+"("+store.mbEmail+")"}님 환영합니다.
                     <span onClick={logout}>로그아웃</span>
                     <span>/</span>
                     <span onClick={()=>{movePage("/changepassword")}}>비번변경</span>
