@@ -76,7 +76,7 @@ function Title(props){
     getUser()
     return(
         <div>
-            <p onClick={()=>{movePage("/todos")}}>타이틀바</p>
+            <p onClick={()=>{movePage("/")}}>타이틀바</p>
             {store.mbNo === 0?
                 <div>
                     <input id="idInput" type="text" placeholder="아이디 또는 이메일" onKeyDown={(e)=>{loginIdEnter(e)}}/>
