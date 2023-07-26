@@ -20,7 +20,7 @@ function Leave(){
         if(store.mbNo === 0){
             return
         }
-        let host = "http://localhost:8080/getmbbymbno"
+        let host = "http://58.79.123.11:8080/getmbbymbno"
         let body = {
             method: "POST",
             headers: {
@@ -52,7 +52,7 @@ function Leave(){
             return
         }
 
-        let host = "http://localhost:8080/leave"
+        let host = "http://58.79.123.11:8080/leave"
         let body = {
             method: "POST",
             headers: {

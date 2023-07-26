@@ -21,7 +21,7 @@ function ChangePassword(){
         if(store.mbNo === 0){
             return
         }
-        let host = "http://localhost:8080/getmbbymbno"
+        let host = "http://58.79.123.11:8080/getmbbymbno"
         let body = {
         method: "POST",
         headers: {
@@ -48,7 +48,7 @@ function ChangePassword(){
             setDisable(true)
             return
         }
-        let host = "http://localhost:8080/changepw"
+        let host = "http://58.79.123.11:8080/changepw"
         let body = {
             method: "POST",
             headers: {

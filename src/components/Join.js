@@ -17,7 +17,7 @@ function Join(props){
     let joinConfirmInput = document.getElementById("joinConfirmInput")
 
     function join(){
-        let host = "http://localhost:8080/join"
+        let host = "http://58.79.123.11:8080/join"
         let body = {
         method: "POST",
         headers: {
@@ -45,7 +45,7 @@ function Join(props){
 
     // 회원가입 성공시 즉시 로그인
     function login(id,email,pw){
-        let host = "http://localhost:8080/login"
+        let host = "http://58.79.123.11:8080/login"
         let body = {
         method: "POST",
         headers: {

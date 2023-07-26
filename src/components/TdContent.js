@@ -3,7 +3,7 @@ import { useState } from "react"
 function TdContent(props){
     function completeTodo(){
         if(props.td.tdIscomplete === 0){
-            fetch("http://localhost:8080/complete",{
+            fetch("http://58.79.123.11:8080/complete",{
                 method: "POST",
                 headers: {
                     "Content-Type" : "application/json",
@@ -13,7 +13,7 @@ function TdContent(props){
                 }),
                 })
         }else{
-            fetch("http://localhost:8080/cancelcomplete",{
+            fetch("http://58.79.123.11:8080/cancelcomplete",{
                 method: "POST",
                 headers: {
                     "Content-Type" : "application/json",
@@ -26,7 +26,7 @@ function TdContent(props){
     }
 
     function deleteTodo(){
-        fetch("http://localhost:8080/delete",{
+        fetch("http://58.79.123.11:8080/delete",{
             method: "POST",
             headers: {
                 "Content-Type" : "application/json",
@@ -39,7 +39,7 @@ function TdContent(props){
 
     function changeTodo(e){
         if(e.key === 'Enter'){
-            fetch("http://localhost:8080/tdupdate",{
+            fetch("http://58.79.123.11:8080/tdupdate",{
                 method: "POST",
                 headers: {
                     "Content-Type" : "application/json",
@@ -57,7 +57,7 @@ function TdContent(props){
     }
 
     function changeTodoDate(){
-        fetch("http://localhost:8080/changetargetdate",{
+        fetch("http://58.79.123.11:8080/changetargetdate",{
                 method: "POST",
                 headers: {
                     "Content-Type" : "application/json",

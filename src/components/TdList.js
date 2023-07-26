@@ -5,7 +5,7 @@ import store from "./Store";
 function TdList() {
 
   function insertTodo(){
-    let host = "http://localhost:8080/tdnew"
+    let host = "http://58.79.123.11:8080/tdnew"
     let body = {
       method: "POST",
       headers: {
@@ -23,7 +23,7 @@ function TdList() {
   }
   
   function getTdList(){
-    let host = "http://localhost:8080/"
+    let host = "http://58.79.123.11:8080/"
     if(store.seeAll === 1){
       host += "alltd"
     }else{

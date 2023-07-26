@@ -8,7 +8,7 @@ function Title(props){
         if(store.mbNo === 0){
             return
         }
-        let host = "http://localhost:8080/getmbbymbno"
+        let host = "http://58.79.123.11:8080/getmbbymbno"
         let body = {
         method: "POST",
         headers: {
@@ -29,7 +29,7 @@ function Title(props){
     function login(){
         let idInput = document.getElementById('idInput')
         let pwInput = document.getElementById('pwInput')
-        let host = "http://localhost:8080/login"
+        let host = "http://58.79.123.11:8080/login"
         let body = {
         method: "POST",
         headers: {
