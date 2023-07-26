@@ -18,7 +18,7 @@ function App() {
       <Title setMbNo={setMbNo}/>
       <Routes>
         {mbNo===0?<Route path={'/'} element={<Main/>} />: <Route path={'/'} element={<TdList/>} />}
-        <Route path={'/join'} element={<Join setMbNo={setMbNo}/>} />
+        <Route path={'/join'} element={<Join setMbNo={setMbNo} />} />
         <Route path={'/changePassword'} element={<ChangePassword />} />
         <Route path={'/leave'} element={<Leave />} />
       </Routes>

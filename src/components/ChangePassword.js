@@ -50,14 +50,14 @@ function ChangePassword(){
         }
         let host = "http://localhost:8080/changepw"
         let body = {
-        method: "POST",
-        headers: {
+            method: "POST",
+            headers: {
             "Content-Type" : "application/json",
-        },
-        body: JSON.stringify({
-            mbNo:store.mbNo,
-            mbPw:changePw,
-        }),
+            },
+            body: JSON.stringify({
+                mbNo:store.mbNo,
+                mbPw:changePw,
+            }),
         }
         fetch(host,body)
         .then((response) => response.json())
