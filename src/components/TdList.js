@@ -67,10 +67,6 @@ function TdList() {
   
   return (
     <div>
-      <button className="todoList_sort" onClick={()=>setOrder(1)}>작성일 ▲</button>
-      <button className="todoList_sort" onClick={()=>setOrder(2)}>작성일 ▼</button>
-      <button className="todoList_sort" onClick={()=>setOrder(3)}>목표일 ▲</button>
-      <button className="todoList_sort" onClick={()=>setOrder(4)}>목표일 ▼</button>
       <div className="todoList_todobox">
         {tdList.length === 0 ? <span></span> : tdList.map((td) => (<TdContent td={td}/>))}
         <tr className="todo_tr">
@@ -94,6 +90,11 @@ function TdList() {
               </td>
           </tr>
         </div>
+        <button className="todoList_sort" onClick={()=>setOrder(1)}>작성일 ▲</button>
+        <button className="todoList_sort" onClick={()=>setOrder(2)}>작성일 ▼</button>
+        <button className="todoList_sort" onClick={()=>setOrder(3)}>목표일 ▲</button>
+        <button className="todoList_sort" onClick={()=>setOrder(4)}>목표일 ▼</button>
+        <br />
         <label className="todoList_label"><input className="todoList_check" type="checkbox" checked={store.seeAll} onClick={seeAll} /><span className="todoList_seeall">완료된 일정 포함</span></label>
     </div>
   );

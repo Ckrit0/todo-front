@@ -143,12 +143,12 @@ function Join(props){
     
     return(
         <div>
-            <p>회원가입 페이지</p>
-            <input id="joinIdInput" type="text" placeholder="아이디" onChange={(e)=>{setJoinId(e.target.value)}} onKeyDown={(e)=>{joinIdEnter(e)}} /><br />
-            <input id="joinEmailInput" type="email" placeholder="이메일" onChange={(e)=>{setJoinEmail(e.target.value)}} onKeyDown={(e)=>{joinEmailEnter(e)}} /><br />
-            <input id="joinPasswordInput" type="password" placeholder="비밀번호" onChange={(e)=>{setJoinPw(e.target.value)}} onKeyDown={(e)=>{joinPwEnter(e)}} /><br />
-            <input id="joinConfirmInput" type="password" placeholder="비밀번호 확인" onChange={(e)=>{setJoinCf(e.target.value)}} onKeyDown={(e)=>{joinCfEnter(e)}} /><br />
-            <button id="joinButton" onClick={join} disabled={disable}>회원 가입하기</button>
+            <p className="join_title">회원가입 페이지</p>
+            <input className="join_input" id="joinIdInput" type="text" placeholder="아이디" onChange={(e)=>{setJoinId(e.target.value)}} onKeyDown={(e)=>{joinIdEnter(e)}} /><br />
+            <input className="join_input" id="joinEmailInput" type="email" placeholder="이메일" onChange={(e)=>{setJoinEmail(e.target.value)}} onKeyDown={(e)=>{joinEmailEnter(e)}} /><br />
+            <input className="join_input" id="joinPasswordInput" type="password" placeholder="비밀번호" onChange={(e)=>{setJoinPw(e.target.value)}} onKeyDown={(e)=>{joinPwEnter(e)}} /><br />
+            <input className="join_input" id="joinConfirmInput" type="password" placeholder="비밀번호 확인" onChange={(e)=>{setJoinCf(e.target.value)}} onKeyDown={(e)=>{joinCfEnter(e)}} /><br />
+            <button className="join_button" id="joinButton" onClick={join} disabled={disable}>회원 가입하기</button>
         </div>
     )
 }

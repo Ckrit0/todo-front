@@ -82,11 +82,11 @@ function TdContent(props){
     function todoBox(){
         if(inputTodo){
             return(
-                <input id='changeTodo' type="text" defaultValue={props.td.tdContent} onKeyDown={(e)=>{changeTodo(e)}} />
+                <input className="todo_inputtext" id='changeTodo' type="text" defaultValue={props.td.tdContent} onKeyDown={(e)=>{changeTodo(e)}} />
             )
         }else{
             return(
-                <span onClick={()=>{setInputTodo(!inputTodo)}}>{props.td.tdContent}</span>
+                <span style={props.td.tdIscomplete==0?{}:{textDecoration:'line-through'}} onClick={()=>{setInputTodo(!inputTodo)}}>{props.td.tdContent}</span>
             )
         }
     }
@@ -94,7 +94,7 @@ function TdContent(props){
     function todoDateBox(){
         if(inputDateTodo){
             return(
-                <input id='changeTodoDate' type="date" defaultValue={props.td.tdTargetdate} onChange={()=>{changeTodoDate()}} onKeyDown={(e)=>{cancelChangeTodoDate(e)}}/>
+                <input className="todo_inputdate" id='changeTodoDate' type="date" defaultValue={props.td.tdTargetdate} onChange={()=>{changeTodoDate()}} onKeyDown={(e)=>{cancelChangeTodoDate(e)}}/>
             )
         }else{
             return(

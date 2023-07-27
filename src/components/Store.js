@@ -2,7 +2,7 @@ let store = {
     mbNo : 0,
     mbId : "",
     mbEmail : "",
-    seeAll : 1,
+    seeAll : 0,
     order : 1,
     tdList : []
 }
