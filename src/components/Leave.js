@@ -106,9 +106,9 @@ function Leave(){
     }
     return(
         <div>
-            <p>회원 탈퇴 페이지</p>
-            <input id="nowPwInput" type="password" placeholder="비밀번호" onChange={(e)=>{setNowPw(e.target.value)}} onKeyDown={(e)=>{nowPwEnter(e)}} /><br />
-            <button id="leaveButton" onClick={getUserPw} disabled={disable}>회원 탈퇴</button>
+            <p className="leave_title">회원 탈퇴 페이지</p>
+            <input className="leave_input" id="nowPwInput" type="password" placeholder="비밀번호" onChange={(e)=>{setNowPw(e.target.value)}} onKeyDown={(e)=>{nowPwEnter(e)}} /><br />
+            <button className="leave_button" id="leaveButton" onClick={getUserPw} disabled={disable}>회원 탈퇴</button>
         </div>
     )
 }
