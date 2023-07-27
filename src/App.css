@@ -57,9 +57,18 @@ body{
 }
 
 .title_greet {
-  margin: 0px 5px 5px 20rem;
+  margin: 0px 5px;
   padding: 10px 10px;
   font-size: 20px;
   font-weight: 600;
   color: var(--purple--10);
+  
 }
+
+.main_text {
+  margin: 50px 5px;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--purple--10);
+}
+
