@@ -1,5 +1,6 @@
 import store from "./Store";
 import { useNavigate } from "react-router-dom";
+import '../App.css'
 
 function Title(props){
     let movePage = useNavigate();
@@ -75,22 +76,23 @@ function Title(props){
     getUser()
     return(
         <div>
-            <p onClick={()=>{movePage("/")}}>TodoT</p>
+            <div className="title_title" onClick={()=>{movePage("/")}}><span className="title_t" >T</span>odo<span className="title_t" >T</span></div>
             {store.mbNo === 0?
                 <div>
-                    <input id="idInput" type="text" placeholder="아이디 또는 이메일" onKeyDown={(e)=>{loginIdEnter(e)}}/>
-                    <input id="pwInput" type="password" placeholder="비밀번호" onKeyDown={(e)=>{loginPwEnter(e)}}/>
-                    <span onClick={login}>로그인</span>
-                    <span>/</span>
-                    <span onClick={()=>{movePage("/join")}}>회원가입</span>
+                    <input className="title_input" id="idInput" type="text" placeholder="아이디 또는 이메일" onKeyDown={(e)=>{loginIdEnter(e)}}/>
+                    <input className="title_input" id="pwInput" type="password" placeholder="비밀번호" onKeyDown={(e)=>{loginPwEnter(e)}}/>
+                    <span className="title_button" onClick={login}>로그인</span>
+                    <span className="title_slash" >/</span>
+                    <span className="title_button" onClick={()=>{movePage("/join")}}>회원가입</span>
                 </div>
                 :
-                <div>{store.mbId+"("+store.mbEmail+")"}님 환영합니다.
-                    <span onClick={logout}>로그아웃</span>
-                    <span>/</span>
-                    <span onClick={()=>{movePage("/changepassword")}}>비번변경</span>
-                    <span>/</span>
-                    <span onClick={()=>{movePage("/leave")}}>회원탈퇴</span>
+                <div>
+                    <span className="title_greet" >{store.mbId+"("+store.mbEmail+")"}님 환영합니다.</span>
+                    <span className="title_button" onClick={logout}>로그아웃</span>
+                    <span className="title_slash" >/</span>
+                    <span className="title_button" onClick={()=>{movePage("/changepassword")}}>비번변경</span>
+                    <span className="title_slash" >/</span>
+                    <span className="title_button" onClick={()=>{movePage("/leave")}}>회원탈퇴</span>
                 </div>
             }
         </div>

@@ -1,38 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+
+:root {
+  --font--0: 'Orbit', sans-serif;
+  --purple--0: #efe8f5;
+  --purple--10: #581458;
+  --blue--10: #2118a3;
+
+}
+
+body{
+  background-color: var(--purple--0);
+}
 .App {
   text-align: center;
+  box-sizing: border-box;
+  font-family: var(--font--0);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title_title {
+  display: block;
+  margin: 10px auto;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--purple--10);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title_t {
+  color: var(--blue--10);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.title_input {
+  margin: 0px 5px;
+  padding: 5px 10px;
+  border: var(--purple--10) 1px solid;
+  border-radius: 10px;
+  background: var(--purple--0);
+  font-size: 16px;
+  font-weight: 300;
+  width: 150px;
 }
 
-.App-link {
-  color: #61dafb;
+.title_button {
+  margin: 0px 5px;
+  padding: 10px 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--blue--10);
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title_slash {
+  margin: 0px 5px;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--purple--10);
+}
+
+.title_greet {
+  margin: 0px 5px 5px 20rem;
+  padding: 10px 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--purple--10);
 }
