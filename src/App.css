@@ -2,7 +2,7 @@
 
 :root {
   --font--0: 'Orbit', sans-serif;
-  --purple--0: #efe8f5;
+  --purple--0: #f4eff8;
   --purple--5: #8045b4;
   --purple--10: #581458;
   --blue--10: #2118a3;
@@ -16,6 +16,7 @@ body{
   text-align: center;
   box-sizing: border-box;
   font-family: var(--font--0);
+  min-width: 800px;
 }
 
 .title_title {
@@ -107,7 +108,7 @@ body{
   color: var(--purple--10);
   font-size: 20px;
   font-weight: 600;
-  width: 150px;
+  width: 200px;
   height: 30px;
 }
 
