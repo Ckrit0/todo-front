@@ -3,6 +3,7 @@
 :root {
   --font--0: 'Orbit', sans-serif;
   --purple--0: #efe8f5;
+  --purple--5: #8045b4;
   --purple--10: #581458;
   --blue--10: #2118a3;
 
@@ -72,3 +73,105 @@ body{
   color: var(--purple--10);
 }
 
+.todoList_sort {
+  margin: 10px 10px;
+  padding: 0px 10px;
+  font-size: 16px;
+  color: var(--purple--0);
+  background: var(--purple--5);
+  border: black 0px solid;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.todoList_todobox {
+  display: block;
+  padding: 10px auto;
+}
+
+.todoList_check {
+  margin: 0px 10px;
+  accent-color: var(--purple--10);
+  width: 15px;
+  height: 15px;
+}
+
+.todoList_label {
+  cursor: pointer;
+}
+
+.todoList_seeall {
+  display: inline-block;
+  color: var(--purple--10);
+  font-size: 20px;
+  font-weight: 600;
+  width: 150px;
+  height: 30px;
+}
+
+.todo_tr {
+  display: block;
+}
+
+.todo_td {
+  display: inline-block;
+  color: var(--purple--10);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 5px 5px;
+}
+
+.todo_td1 {
+  width: 50px;
+}
+
+.todo_td2 {
+  width: 400px;
+  text-align: left;  
+}
+
+.todo_td3 {
+  width: 150px;
+}
+
+.todo_td4 {
+  width: 80px;
+}
+
+.todo_check {
+  margin: 0px 10px;
+  accent-color: var(--purple--10);
+  width: 15px;
+  height: 15px;
+}
+
+.todo_inputtext {
+  padding: 5px 10px;
+  border: var(--purple--10) 1px solid;
+  border-radius: 10px;
+  background: var(--purple--0);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--blue--10);
+  width: 350px;
+}
+
+.todo_inputdate {
+  padding: 5px 10px;
+  border: var(--purple--10) 1px solid;
+  border-radius: 10px;
+  background: var(--purple--0);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blue--10);
+}
+
+.todo_button {
+  border: black 0px solid;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--purple--0);
+  background: var(--blue--10);
+}

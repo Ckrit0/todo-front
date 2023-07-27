@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import TdContent from "./TdContent";
 import store from "./Store";
 
@@ -67,33 +67,34 @@ function TdList() {
   
   return (
     <div>
-      <p>Todo List</p>
-      <span><input type="checkbox" checked={store.seeAll} onClick={seeAll} />완료된 일정 포함</span>
-      <button onClick={()=>setOrder(1)}>작성일순</button>
-      <button onClick={()=>setOrder(2)}>작성일역순</button>
-      <button onClick={()=>setOrder(3)}>목표일순</button>
-      <button onClick={()=>setOrder(4)}>목표일역순</button>
-      {tdList.length === 0 ? <span></span> : tdList.map((td) => (<TdContent td={td}/>))}
-      <tr>
-            <td>
-                +
-            </td>
-            <td>
-                <input id="tdInput" type="text" onKeyDown={(e)=>{
-                  if(e.key === 'Enter'){
-                    insertTodo()
-                  }
-                }} />
-            </td>
-            <td>
-                <input id="tdDateInput" type="date" defaultValue={today} />
-            </td>
-            <td>
-                <button onClick={insertTodo}>
-                    추가
-                </button>
-            </td>
-        </tr>
+      <button className="todoList_sort" onClick={()=>setOrder(1)}>작성일 ▲</button>
+      <button className="todoList_sort" onClick={()=>setOrder(2)}>작성일 ▼</button>
+      <button className="todoList_sort" onClick={()=>setOrder(3)}>목표일 ▲</button>
+      <button className="todoList_sort" onClick={()=>setOrder(4)}>목표일 ▼</button>
+      <div className="todoList_todobox">
+        {tdList.length === 0 ? <span></span> : tdList.map((td) => (<TdContent td={td}/>))}
+        <tr className="todo_tr">
+              <td className="todo_td todo_td1">
+                  +
+              </td>
+              <td className="todo_td todo_td2">
+                  <input className="todo_inputtext" id="tdInput" type="text" onKeyDown={(e)=>{
+                    if(e.key === 'Enter'){
+                      insertTodo()
+                    }
+                  }} />
+              </td>
+              <td className="todo_td todo_td3">
+                  <input className="todo_inputdate" id="tdDateInput" type="date" defaultValue={today} />
+              </td>
+              <td className="todo_td todo_td4">
+                  <button className="todo_button" onClick={insertTodo}>
+                      추가
+                  </button>
+              </td>
+          </tr>
+        </div>
+        <label className="todoList_label"><input className="todoList_check" type="checkbox" checked={store.seeAll} onClick={seeAll} /><span className="todoList_seeall">완료된 일정 포함</span></label>
     </div>
   );
 }

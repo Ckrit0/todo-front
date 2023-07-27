@@ -104,19 +104,19 @@ function TdContent(props){
     }
 
     return(
-        <tr>
-            <td>
-                <input type="checkbox" checked={props.td.tdIscomplete} onClick={completeTodo} readOnly />
+        <tr className="todo_tr">
+            <td className="todo_td todo_td1">
+                <input className="todo_check" type="checkbox" checked={props.td.tdIscomplete} onClick={completeTodo} readOnly />
             </td>
-            <td>
+            <td className="todo_td todo_td2">
                 {todoBox()}
             </td>
-            <td>
+            <td className="todo_td todo_td3">
                 {todoDateBox()}
             </td>
-            <td>
-                <button onClick={deleteTodo}>
-                    Del
+            <td className="todo_td todo_td4">
+                <button className="todo_button" onClick={deleteTodo}>
+                    삭제
                 </button>
             </td>
         </tr>
