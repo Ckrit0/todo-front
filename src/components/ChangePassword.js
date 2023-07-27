@@ -140,11 +140,11 @@ function ChangePassword(){
 
     return(
         <div>
-            <p>비번변경 페이지</p>
-            <input id="nowPwInput" type="password" placeholder="현재 비밀번호" onChange={(e)=>{setNowPw(e.target.value)}} onKeyDown={(e)=>{nowPwEnter(e)}} /><br />
-            <input id="changePWInput" type="password" placeholder="변경할 비밀번호" onChange={(e)=>{setChangePw(e.target.value)}} onKeyDown={(e)=>{changePwEnter(e)}} /><br />
-            <input id="changeCfInput" type="password" placeholder="변경할 비밀번호 확인" onChange={(e)=>{setChangeCf(e.target.value)}} onKeyDown={(e)=>{changeCfEnter(e)}} /><br />
-            <button id="ChangeButton" onClick={getUserPw} disabled={disable}>비밀번호 변경</button>
+            <p className="cp_title">비번번호 변경하기</p>
+            <input className="cp_input" id="nowPwInput" type="password" placeholder="현재 비밀번호" onChange={(e)=>{setNowPw(e.target.value)}} onKeyDown={(e)=>{nowPwEnter(e)}} /><br />
+            <input className="cp_input" id="changePWInput" type="password" placeholder="변경할 비밀번호" onChange={(e)=>{setChangePw(e.target.value)}} onKeyDown={(e)=>{changePwEnter(e)}} /><br />
+            <input className="cp_input" id="changeCfInput" type="password" placeholder="변경할 비밀번호 확인" onChange={(e)=>{setChangeCf(e.target.value)}} onKeyDown={(e)=>{changeCfEnter(e)}} /><br />
+            <button  className="cp_button" id="ChangeButton" onClick={getUserPw} disabled={disable}>비밀번호 변경</button>
         </div>
     )
 }
