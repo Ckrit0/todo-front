@@ -1,4 +1,3 @@
-import { useState } from "react";
 import store from "./Store";
 import { useNavigate } from "react-router-dom";
 
@@ -76,7 +75,7 @@ function Title(props){
     getUser()
     return(
         <div>
-            <p onClick={()=>{movePage("/")}}>타이틀바</p>
+            <p onClick={()=>{movePage("/")}}>TodoT</p>
             {store.mbNo === 0?
                 <div>
                     <input id="idInput" type="text" placeholder="아이디 또는 이메일" onKeyDown={(e)=>{loginIdEnter(e)}}/>
