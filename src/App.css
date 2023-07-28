@@ -9,9 +9,6 @@
 
 }
 
-body{
-  background-color: var(--purple--0);
-}
 .App {
   text-align: center;
   box-sizing: border-box;
