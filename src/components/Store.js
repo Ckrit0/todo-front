@@ -4,7 +4,8 @@ let store = {
     mbEmail : "",
     seeAll : 0,
     order : 1,
-    tdList : []
+    tdList : [],
+    preTdList : null,
 }
 
 export default store;

@@ -4,6 +4,21 @@ import store from "./Store";
 
 function TdList() {
 
+  function seeAll(){
+    if(store.seeAll === 0){
+      store.seeAll = 1
+    }else{
+      store.seeAll = 0
+    }
+    store.preTdList = null
+    setFake(0)
+  }
+  function setOrder(orderValue){
+    store.order = orderValue
+    store.preTdList = null
+    setFake(0)
+  }
+
   function insertTodo(){
     let host = "http://58.79.123.11:8080/tdnew"
     let body = {
@@ -55,10 +70,25 @@ function TdList() {
     fetch(host,body)
     .then((response) => response.json())
     .then((response)=>{
-      setTdList(response)
+      if (store.preTdList == null){
+        store.preTdList = response
+        setTdList(response)
+      }else{
+        let isNew = false
+        for(var i=0;i<response.length;i++){
+          if(response[i]['tdNo'] != store.preTdList[i]['tdNo']){
+            isNew = true
+          }
+        }
+        if(isNew){
+          setTdList(response)
+        }
+        response = response // 이상하게 한번 호출해줘야 정상처리됨
+      }
     })
   }
   let [tdList,setTdList] = useState([])
+  let [fake,setFake] = useState(0)
   getTdList()
   let dateNow = new Date();
   let today = dateNow.toISOString().slice(0, 10);
@@ -100,16 +130,7 @@ function TdList() {
   );
 }
 
-function seeAll(){
-  if(store.seeAll === 0){
-    store.seeAll = 1
-  }else{
-    store.seeAll = 0
-  }
-}
-function setOrder(orderValue){
-  store.order = orderValue
-}
+
 
 
   
